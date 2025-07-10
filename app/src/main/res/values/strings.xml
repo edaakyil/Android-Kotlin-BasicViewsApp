@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">BasicViewsApp</string>
+
+    <!-- Prompts-->
+    <string name="value_must_be_positive_prompt">Value must be positive</string>
+
+    <!-- Button Text -->
+    <string name="generate_random_texts_button_text">Generate Random Texts</string>
+    <string name="spinner_page_button_text">Spinner Page</string>
+    <string name="listview_page_button_text">ListView Page</string>
+
+    <!-- EditText -->
+    <string name="generate_random_texts_count_hint">Input count of texts to be generated randomly:</string>
+
+    <!-- Spinner -->
+    <string name="single">Single</string>
+    <string name="married">Married</string>
+    <string name="divorced">Divorced</string>
+</resources>
