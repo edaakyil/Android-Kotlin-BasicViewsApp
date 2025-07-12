@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.edaakyil.android.kotlin.app.basicviews.SpinnerWithBindingActivity"/>
+        <import type="android.widget.ArrayAdapter"/>
+
+        <variable name="activity" type="SpinnerWithBindingActivity"/>
+        <variable name="adapter" type="ArrayAdapter&lt;String&gt;"/>
+        <variable name="selectedItemPosition" type="int"/>
+    </data>
+
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/spinnerWithBindingActivityMainLayout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginHorizontal="32dp"
+        tools:context=".SpinnerWithBindingActivity">
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adapter="@{adapter}"
+            android:selectedItemPosition="@={selectedItemPosition}"
+            android:onItemSelected="@{(p0, p1, position, p3) -> activity.onItemSelected(position)}"/>
+
+    </LinearLayout>
+</layout>

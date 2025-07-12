@@ -37,11 +37,19 @@ class MainActivity : AppCompatActivity() {
         initialize()
     }
 
-    fun onSpinnerPageButtonClicked() {
-        Intent(this, SpinnerActivity::class.java).apply { startActivity(this) }
+    fun onSpinnerWithLegacyPageButtonClicked() {
+        Intent(this, SpinnerWithLegacyActivity::class.java).apply { startActivity(this) }
     }
 
-    fun onListViewPageButtonClicked() {
-        Intent(this, ListViewActivity::class.java).apply { startActivity(this) }
+    fun onSpinnerWithBindingPageButtonClicked() {
+        Intent(this, SpinnerWithBindingActivity::class.java).apply { startActivity(this) }
+    }
+
+    fun onListViewWithLegacyPageButtonClicked() {
+        Intent(this, ListViewWithLegacyActivity::class.java).apply { startActivity(this) }
+    }
+
+    fun onListViewWithBindingPageButtonClicked() {
+        Intent(this, ListViewWithBindingActivity::class.java).apply { startActivity(this) }
     }
 }

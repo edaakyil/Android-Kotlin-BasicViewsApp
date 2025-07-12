@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class SpinnerActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class SpinnerWithLegacyActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var mMaritalStatusSpinner: Spinner
 
     private fun initMaritalStatusSpinner() {
@@ -21,8 +21,8 @@ class SpinnerActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener 
             resources.getString(R.string.divorced)
         )
         mMaritalStatusSpinner = findViewById<Spinner>(R.id.maritalStatusSpinner).apply {
-            adapter = ArrayAdapter(this@SpinnerActivity, android.R.layout.simple_spinner_dropdown_item, maritalStatus)
-            onItemSelectedListener = this@SpinnerActivity
+            adapter = ArrayAdapter(this@SpinnerWithLegacyActivity, android.R.layout.simple_spinner_dropdown_item, maritalStatus)
+            onItemSelectedListener = this@SpinnerWithLegacyActivity
         }
 
     }
@@ -38,8 +38,8 @@ class SpinnerActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_spinner)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.spinnerActivityMainLayout)) { v, insets ->
+        setContentView(R.layout.activity_spinner_with_legacy)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.spinnerWithLegacyActivityMainLayout)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets

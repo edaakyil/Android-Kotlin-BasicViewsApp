@@ -13,11 +13,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import org.csystem.kotlin.util.string.randomTextEN
 import kotlin.random.Random
-import org.csystem.kotlin.util.string.randomTextsEN
 
 private const val DEFAULT_USER_COUNT = 20
 
-class ListViewActivity : AppCompatActivity() {
+class ListViewWithLegacyActivity : AppCompatActivity() {
     private lateinit var mRandomTextsListView: ListView
     private lateinit var mRandomTextTextView: TextView
     private lateinit var mRandomTextsCountEditText: EditText
@@ -31,7 +30,7 @@ class ListViewActivity : AppCompatActivity() {
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
     }
 
-    private fun getRandomTexts(count: Int): List<String> {
+    private fun generateRandomTexts(count: Int): List<String> {
         return List(count) { i -> "$i. ${Random.randomTextEN(Random.nextInt(3, 16))}" }
         //return Random.randomTextsEN(count, Random.nextInt(5, 16)).toList()
     }
@@ -54,8 +53,8 @@ class ListViewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_list_view)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.listViewActivityMainLayout)) { v, insets ->
+        setContentView(R.layout.activity_list_view_with_legacy)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.listViewWithLegacyActivityMainLayout)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -77,7 +76,7 @@ class ListViewActivity : AppCompatActivity() {
                 return
             }
 
-            val randomTexts = getRandomTexts(count)
+            val randomTexts = generateRandomTexts(count)
 
             mRandomTextsArrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, randomTexts)
                 .apply { mRandomTextsListView.adapter = this }

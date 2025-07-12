@@ -21,15 +21,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="@string/spinner_page_button_text"
-            android:onClick="@{_ -> activity.onSpinnerPageButtonClicked()}" />
+            android:text="@string/spinner_with_legacy_page_button_text"
+            android:onClick="@{_ -> activity.onSpinnerWithLegacyPageButtonClicked()}" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="@string/listview_page_button_text"
-            android:onClick="@{_ -> activity.onListViewPageButtonClicked()}" />
+            android:text="@string/spinner_with_binding_page_button_text"
+            android:onClick="@{_ -> activity.onSpinnerWithBindingPageButtonClicked()}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/listview_with_legacy_page_button_text"
+            android:onClick="@{_ -> activity.onListViewWithLegacyPageButtonClicked()}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/listview_with_binding_page_button_text"
+            android:onClick="@{_ -> activity.onListViewWithBindingPageButtonClicked()}" />
 
     </LinearLayout>
 </layout>

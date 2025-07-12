@@ -3,13 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/spinnerActivityMainLayout"
+    android:id="@+id/spinnerWithLegacyActivityMainLayout"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="32dp"
     android:layout_marginHorizontal="32dp"
-    tools:context=".SpinnerActivity">
+    tools:context=".SpinnerWithLegacyActivity">
 
     <Spinner
         android:id="@+id/maritalStatusSpinner"
